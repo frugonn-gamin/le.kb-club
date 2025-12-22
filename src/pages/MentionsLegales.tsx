@@ -23,11 +23,12 @@ const MentionsLegales = () => {
             <div className="bg-card rounded-2xl p-8 shadow-sm border border-border">
               <h2 className="text-2xl font-serif text-primary mb-4">Éditeur du site</h2>
               <p className="text-muted-foreground leading-relaxed">
-                <strong>Le.kB - Cabinet de Kinésithérapie</strong><br />
-                123 Avenue de la Santé<br />
-                75014 Paris, France<br /><br />
-                Téléphone : 01 23 45 67 89<br />
-                Email : contact@lekb.fr
+                <strong>Le.kB</strong><br />
+                5 rue des Bains<br />
+                02400 Château-Thierry, France<br /><br />
+                Téléphone : 03 75 05 00 12<br />
+                Email : info@lekb.club<br />
+                Site : lekb.club
               </p>
             </div>
 

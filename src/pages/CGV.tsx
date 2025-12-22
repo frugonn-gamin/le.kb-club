@@ -21,7 +21,7 @@ const CGV = () => {
               <h2 className="font-display text-2xl text-foreground">Article 1 - Objet</h2>
               <p>
                 Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles 
-                entre le Cabinet de Kinésithérapie Le.kB et ses patients pour la fourniture de 
+                entre Le.kB, situé 5 rue des Bains à Château-Thierry (02400), et ses patients pour la fourniture de 
                 prestations de soins de kinésithérapie.
               </p>
               <p>

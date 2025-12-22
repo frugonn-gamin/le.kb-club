@@ -23,7 +23,7 @@ const Confidentialite = () => {
             <div className="bg-card rounded-2xl p-8 shadow-sm border border-border">
               <h2 className="text-2xl font-serif text-primary mb-4">Introduction</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Le.kB - Cabinet de Kinésithérapie s'engage à protéger la vie privée des utilisateurs de son site. 
+                Le.kB s'engage à protéger la vie privée des utilisateurs de son site. 
                 Cette politique de confidentialité explique comment nous collectons, utilisons et 
                 protégeons vos données personnelles conformément au Règlement Général sur la Protection 
                 des Données (RGPD).
@@ -98,7 +98,7 @@ const Confidentialite = () => {
                 <li><strong>Droit de limitation :</strong> limiter le traitement de vos données</li>
               </ul>
               <p className="text-muted-foreground leading-relaxed mt-4">
-                Pour exercer ces droits, contactez-nous à : <strong>contact@lekb.fr</strong>
+                Pour exercer ces droits, contactez-nous à : <strong>info@lekb.club</strong>
               </p>
             </div>
 
@@ -134,11 +134,11 @@ const Confidentialite = () => {
                 vos droits, vous pouvez nous contacter :
               </p>
               <p className="text-muted-foreground leading-relaxed mt-4">
-                <strong>Le.kB - Cabinet de Kinésithérapie</strong><br />
-                123 Avenue de la Santé<br />
-                75014 Paris, France<br />
-                Email : contact@lekb.fr<br />
-                Téléphone : 01 23 45 67 89
+                <strong>Le.kB</strong><br />
+                5 rue des Bains<br />
+                02400 Château-Thierry, France<br />
+                Email : info@lekb.club<br />
+                Téléphone : 03 75 05 00 12
               </p>
             </div>
 
