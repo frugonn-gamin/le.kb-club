@@ -27,10 +27,9 @@ export const Hero = () => {
           club santé & bien-être
         </p>
 
-        {/* Scroll indicator - More elegant */}
-        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 animate-fade-in-delayed flex flex-col items-center gap-3">
-          <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-muted-foreground/60">Découvrir</span>
-          <div className="w-px h-12 bg-gradient-to-b from-muted-foreground/30 to-transparent" />
+        {/* Scroll indicator - Minimal */}
+        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 animate-fade-in-delayed">
+          <div className="w-px h-16 bg-gradient-to-b from-foreground/20 to-transparent" />
         </div>
       </div>
     </section>
