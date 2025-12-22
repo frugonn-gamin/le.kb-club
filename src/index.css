@@ -2,46 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Le.kB Design System - Minimaliste épuré
-   Palette monochrome avec beaucoup de blanc
-   Typographie fine et aérée
+/* Le.kB Design System - Premium & Luxe
+   Palette noir profond et ivoire
+   Typographie élégante et raffinée
 */
 
 @layer base {
   :root {
-    /* Monochrome palette - Soft warm whites and deep charcoal */
-    --background: 0 0% 99%;
-    --foreground: 0 0% 12%;
+    /* Premium palette - Deep black and warm ivory */
+    --background: 40 20% 98%;
+    --foreground: 30 10% 8%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 12%;
+    --card: 40 30% 99%;
+    --card-foreground: 30 10% 8%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 12%;
+    --popover: 40 30% 99%;
+    --popover-foreground: 30 10% 8%;
 
-    --primary: 0 0% 12%;
-    --primary-foreground: 0 0% 99%;
+    --primary: 30 10% 8%;
+    --primary-foreground: 40 20% 98%;
 
-    --secondary: 30 10% 96%;
-    --secondary-foreground: 0 0% 12%;
+    --secondary: 35 25% 95%;
+    --secondary-foreground: 30 10% 8%;
 
-    --muted: 30 5% 94%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 35 15% 92%;
+    --muted-foreground: 30 8% 40%;
 
-    --accent: 30 8% 92%;
-    --accent-foreground: 0 0% 12%;
+    --accent: 32 40% 88%;
+    --accent-foreground: 30 10% 8%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 99%;
 
-    --border: 30 10% 90%;
-    --input: 30 10% 90%;
-    --ring: 0 0% 12%;
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 30 10% 8%;
 
     --radius: 0rem;
 
     /* Hero specific */
-    --hero-overlay: 0 0% 0%;
+    --hero-overlay: 30 10% 5%;
   }
 
   .dark {
@@ -105,26 +105,25 @@
     @apply hover:after:w-full;
   }
 
-  /* Hero gradient animation */
+  /* Hero gradient animation - Premium warm tones */
   .hero-gradient {
     background: linear-gradient(
-      135deg,
-      hsl(30 15% 92%) 0%,
-      hsl(200 10% 90%) 25%,
-      hsl(30 10% 88%) 50%,
-      hsl(180 8% 91%) 75%,
-      hsl(30 15% 92%) 100%
+      160deg,
+      hsl(35 30% 94%) 0%,
+      hsl(40 25% 92%) 30%,
+      hsl(32 20% 90%) 60%,
+      hsl(38 28% 93%) 100%
     );
-    background-size: 400% 400%;
-    animation: gradient-shift 20s ease infinite;
+    background-size: 300% 300%;
+    animation: gradient-shift 25s ease infinite;
   }
 
   @keyframes gradient-shift {
     0%, 100% {
-      background-position: 0% 50%;
+      background-position: 0% 0%;
     }
     50% {
-      background-position: 100% 50%;
+      background-position: 100% 100%;
     }
   }
 
