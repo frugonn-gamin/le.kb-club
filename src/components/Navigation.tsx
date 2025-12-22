@@ -27,18 +27,28 @@ export const Navigation = ({ variant = "transparent" }: NavigationProps) => {
       }`}
     >
       <nav className="container mx-auto px-8 lg:px-16">
-        <div className="flex items-center justify-between h-20 lg:h-28">
-          {/* Logo - Premium styling */}
-          <Link
-            to="/"
-            className="font-serif text-xl lg:text-2xl font-normal tracking-[-0.01em] transition-opacity hover:opacity-70"
-          >
-            Le<span className="text-muted-foreground/50">.</span>kB
-          </Link>
-
-          {/* Desktop Navigation - Refined spacing */}
-          <ul className="hidden lg:flex items-center gap-12">
-            {navItems.map((item) => (
+        <div className="flex items-center justify-center h-20 lg:h-28">
+          {/* Desktop Navigation - Centered */}
+          <ul className="hidden lg:flex items-center gap-10">
+            {navItems.slice(0, 3).map((item) => (
+              <li key={item.href}>
+                <Link to={item.href} className="nav-link text-foreground/70 hover:text-foreground transition-all duration-300">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+            
+            {/* Logo - Center */}
+            <li className="mx-8">
+              <Link
+                to="/"
+                className="font-serif text-xl lg:text-2xl font-normal tracking-[-0.01em] transition-opacity hover:opacity-70"
+              >
+                Le<span className="text-muted-foreground/50">.</span>kB
+              </Link>
+            </li>
+            
+            {navItems.slice(3).map((item) => (
               <li key={item.href}>
                 <Link to={item.href} className="nav-link text-foreground/70 hover:text-foreground transition-all duration-300">
                   {item.label}
@@ -47,14 +57,24 @@ export const Navigation = ({ variant = "transparent" }: NavigationProps) => {
             ))}
           </ul>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 -mr-2"
-            aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile: Logo left, menu right */}
+          <div className="lg:hidden flex items-center justify-between w-full">
+            <Link
+              to="/"
+              className="font-serif text-xl font-normal tracking-[-0.01em] transition-opacity hover:opacity-70"
+            >
+              Le<span className="text-muted-foreground/50">.</span>kB
+            </Link>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 -mr-2"
+              aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
