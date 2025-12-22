@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -251,6 +252,8 @@ const Contact = () => {
           <div className="aspect-[21/9] bg-muted/50 w-full" />
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 };
