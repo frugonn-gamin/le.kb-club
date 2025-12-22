@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { NavLink } from "./NavLink";
 
 const navItemsLeft = [
   { label: "Le lieu", href: "/lieu" },
@@ -36,9 +37,14 @@ export const Navigation = ({ variant = "transparent" }: NavigationProps) => {
             {/* Left side */}
             <li className="flex items-center gap-12">
               {navItemsLeft.map((item) => (
-                <Link key={item.href} to={item.href} className="nav-link text-foreground/70 hover:text-foreground transition-all duration-300">
+                <NavLink 
+                  key={item.href} 
+                  to={item.href} 
+                  className="nav-link text-foreground/70 hover:text-foreground transition-all duration-300"
+                  activeClassName="text-foreground after:w-full"
+                >
                   {item.label}
-                </Link>
+                </NavLink>
               ))}
             </li>
             
@@ -55,9 +61,14 @@ export const Navigation = ({ variant = "transparent" }: NavigationProps) => {
             {/* Right side */}
             <li className="flex items-center gap-12">
               {navItemsRight.map((item) => (
-                <Link key={item.href} to={item.href} className="nav-link text-foreground/70 hover:text-foreground transition-all duration-300">
+                <NavLink 
+                  key={item.href} 
+                  to={item.href} 
+                  className="nav-link text-foreground/70 hover:text-foreground transition-all duration-300"
+                  activeClassName="text-foreground after:w-full"
+                >
                   {item.label}
-                </Link>
+                </NavLink>
               ))}
             </li>
           </ul>
@@ -91,13 +102,14 @@ export const Navigation = ({ variant = "transparent" }: NavigationProps) => {
           <ul className="py-6 space-y-6 border-t border-border/50 text-center">
             {allNavItems.map((item) => (
               <li key={item.href}>
-                <Link
+                <NavLink
                   to={item.href}
                   onClick={() => setIsOpen(false)}
                   className="nav-link inline-block text-foreground/80 hover:text-foreground transition-colors"
+                  activeClassName="text-foreground after:w-full"
                 >
                   {item.label}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>
