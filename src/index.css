@@ -9,33 +9,33 @@
 
 @layer base {
   :root {
-    /* Premium palette - Deep black and warm ivory */
-    --background: 40 20% 98%;
+    /* Pierre Beige - tons chauds et naturels */
+    --background: 35 25% 90%;
     --foreground: 30 10% 8%;
 
-    --card: 40 30% 99%;
+    --card: 35 20% 93%;
     --card-foreground: 30 10% 8%;
 
-    --popover: 40 30% 99%;
+    --popover: 35 20% 93%;
     --popover-foreground: 30 10% 8%;
 
     --primary: 30 10% 8%;
-    --primary-foreground: 40 20% 98%;
+    --primary-foreground: 35 25% 90%;
 
-    --secondary: 35 25% 95%;
+    --secondary: 35 22% 85%;
     --secondary-foreground: 30 10% 8%;
 
-    --muted: 35 15% 92%;
+    --muted: 35 18% 82%;
     --muted-foreground: 30 8% 40%;
 
-    --accent: 32 40% 88%;
+    --accent: 32 30% 80%;
     --accent-foreground: 30 10% 8%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 99%;
 
-    --border: 35 20% 88%;
-    --input: 35 20% 88%;
+    --border: 35 20% 78%;
+    --input: 35 20% 78%;
     --ring: 30 10% 8%;
 
     --radius: 0rem;
@@ -105,14 +105,14 @@
     @apply hover:after:w-full;
   }
 
-  /* Hero gradient animation - Premium warm tones */
+  /* Hero gradient animation - Pierre Beige tones */
   .hero-gradient {
     background: linear-gradient(
       160deg,
-      hsl(35 30% 94%) 0%,
-      hsl(40 25% 92%) 30%,
-      hsl(32 20% 90%) 60%,
-      hsl(38 28% 93%) 100%
+      hsl(35 25% 90%) 0%,
+      hsl(38 22% 88%) 30%,
+      hsl(32 20% 85%) 60%,
+      hsl(36 24% 89%) 100%
     );
     background-size: 300% 300%;
     animation: gradient-shift 25s ease infinite;
