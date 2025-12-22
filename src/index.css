@@ -9,33 +9,33 @@
 
 @layer base {
   :root {
-    /* Pierre Beige - tons chauds et naturels */
-    --background: 35 25% 90%;
+    /* Pierre Beige Doré - tons chauds avec touche de jaune */
+    --background: 42 30% 89%;
     --foreground: 30 10% 8%;
 
-    --card: 35 20% 93%;
+    --card: 40 25% 92%;
     --card-foreground: 30 10% 8%;
 
-    --popover: 35 20% 93%;
+    --popover: 40 25% 92%;
     --popover-foreground: 30 10% 8%;
 
     --primary: 30 10% 8%;
-    --primary-foreground: 35 25% 90%;
+    --primary-foreground: 42 30% 89%;
 
-    --secondary: 35 22% 85%;
+    --secondary: 40 28% 84%;
     --secondary-foreground: 30 10% 8%;
 
-    --muted: 35 18% 82%;
+    --muted: 38 22% 80%;
     --muted-foreground: 30 8% 40%;
 
-    --accent: 32 30% 80%;
+    --accent: 45 35% 78%;
     --accent-foreground: 30 10% 8%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 99%;
 
-    --border: 35 20% 78%;
-    --input: 35 20% 78%;
+    --border: 40 25% 76%;
+    --input: 40 25% 76%;
     --ring: 30 10% 8%;
 
     --radius: 0rem;
@@ -105,14 +105,14 @@
     @apply hover:after:w-full;
   }
 
-  /* Hero gradient animation - Pierre Beige tones */
+  /* Hero gradient animation - Pierre Beige Doré */
   .hero-gradient {
     background: linear-gradient(
       160deg,
-      hsl(35 25% 90%) 0%,
-      hsl(38 22% 88%) 30%,
-      hsl(32 20% 85%) 60%,
-      hsl(36 24% 89%) 100%
+      hsl(42 30% 89%) 0%,
+      hsl(45 28% 86%) 30%,
+      hsl(38 25% 84%) 60%,
+      hsl(43 32% 88%) 100%
     );
     background-size: 300% 300%;
     animation: gradient-shift 25s ease infinite;
