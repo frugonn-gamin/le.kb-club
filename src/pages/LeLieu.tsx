@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 
 const LeLieu = () => {
   return (
@@ -135,6 +136,8 @@ const LeLieu = () => {
           </a>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 };

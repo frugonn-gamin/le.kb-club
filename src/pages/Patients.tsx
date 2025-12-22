@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 
 const Patients = () => {
   return (
@@ -185,6 +186,8 @@ const Patients = () => {
           </a>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 };

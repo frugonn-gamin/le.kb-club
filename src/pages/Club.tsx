@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 
 const Club = () => {
   return (
@@ -217,6 +218,8 @@ const Club = () => {
           </a>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 };
