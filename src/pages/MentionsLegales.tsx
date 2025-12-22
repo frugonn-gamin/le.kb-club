@@ -23,11 +23,11 @@ const MentionsLegales = () => {
             <div className="bg-card rounded-2xl p-8 shadow-sm border border-border">
               <h2 className="text-2xl font-serif text-primary mb-4">Éditeur du site</h2>
               <p className="text-muted-foreground leading-relaxed">
-                <strong>L'Orée du Bien-Être</strong><br />
-                123 Avenue de la Forêt<br />
-                75016 Paris, France<br /><br />
+                <strong>Le.kB - Cabinet de Kinésithérapie</strong><br />
+                123 Avenue de la Santé<br />
+                75014 Paris, France<br /><br />
                 Téléphone : 01 23 45 67 89<br />
-                Email : contact@oree-bien-etre.fr
+                Email : contact@lekb.fr
               </p>
             </div>
 
@@ -35,7 +35,8 @@ const MentionsLegales = () => {
               <h2 className="text-2xl font-serif text-primary mb-4">Directeur de la publication</h2>
               <p className="text-muted-foreground leading-relaxed">
                 [Nom du directeur de publication]<br />
-                En qualité de [fonction]
+                Masseur-kinésithérapeute diplômé d'État<br />
+                N° ADELI : [Numéro ADELI]
               </p>
             </div>
 
@@ -70,7 +71,7 @@ const MentionsLegales = () => {
                 ou des lacunes.
               </p>
               <p className="text-muted-foreground leading-relaxed mt-4">
-                L'Orée du Bien-Être ne pourra être tenue responsable des dommages directs et indirects 
+                Le.kB ne pourra être tenu responsable des dommages directs et indirects 
                 causés au matériel de l'utilisateur, lors de l'accès au site.
               </p>
             </div>
@@ -78,7 +79,7 @@ const MentionsLegales = () => {
             <div className="bg-card rounded-2xl p-8 shadow-sm border border-border">
               <h2 className="text-2xl font-serif text-primary mb-4">Liens hypertextes</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Le site peut contenir des liens hypertextes vers d'autres sites. L'Orée du Bien-Être 
+                Le site peut contenir des liens hypertextes vers d'autres sites. Le.kB 
                 n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu.
               </p>
             </div>

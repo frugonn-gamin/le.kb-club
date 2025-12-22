@@ -23,7 +23,7 @@ const Confidentialite = () => {
             <div className="bg-card rounded-2xl p-8 shadow-sm border border-border">
               <h2 className="text-2xl font-serif text-primary mb-4">Introduction</h2>
               <p className="text-muted-foreground leading-relaxed">
-                L'Orée du Bien-Être s'engage à protéger la vie privée des utilisateurs de son site. 
+                Le.kB - Cabinet de Kinésithérapie s'engage à protéger la vie privée des utilisateurs de son site. 
                 Cette politique de confidentialité explique comment nous collectons, utilisons et 
                 protégeons vos données personnelles conformément au Règlement Général sur la Protection 
                 des Données (RGPD).
@@ -51,8 +51,8 @@ const Confidentialite = () => {
               </p>
               <ul className="list-disc list-inside text-muted-foreground mt-4 space-y-2">
                 <li>Répondre à vos demandes de contact</li>
-                <li>Gérer les adhésions au club</li>
-                <li>Vous informer sur nos activités et événements</li>
+                <li>Gérer vos rendez-vous</li>
+                <li>Vous informer sur nos services</li>
                 <li>Améliorer notre site et nos services</li>
                 <li>Respecter nos obligations légales</li>
               </ul>
@@ -65,7 +65,7 @@ const Confidentialite = () => {
               </p>
               <ul className="list-disc list-inside text-muted-foreground mt-4 space-y-2">
                 <li>Votre consentement explicite</li>
-                <li>L'exécution d'un contrat (adhésion)</li>
+                <li>L'exécution d'un contrat (prise de rendez-vous)</li>
                 <li>Notre intérêt légitime à améliorer nos services</li>
                 <li>Le respect de nos obligations légales</li>
               </ul>
@@ -79,7 +79,7 @@ const Confidentialite = () => {
               </p>
               <ul className="list-disc list-inside text-muted-foreground mt-4 space-y-2">
                 <li>Données de contact : 3 ans après le dernier contact</li>
-                <li>Données d'adhésion : durée de l'adhésion + 5 ans</li>
+                <li>Dossier patient : durée légale de conservation des dossiers médicaux</li>
                 <li>Cookies : 13 mois maximum</li>
               </ul>
             </div>
@@ -98,7 +98,7 @@ const Confidentialite = () => {
                 <li><strong>Droit de limitation :</strong> limiter le traitement de vos données</li>
               </ul>
               <p className="text-muted-foreground leading-relaxed mt-4">
-                Pour exercer ces droits, contactez-nous à : <strong>contact@oree-bien-etre.fr</strong>
+                Pour exercer ces droits, contactez-nous à : <strong>contact@lekb.fr</strong>
               </p>
             </div>
 
@@ -134,10 +134,10 @@ const Confidentialite = () => {
                 vos droits, vous pouvez nous contacter :
               </p>
               <p className="text-muted-foreground leading-relaxed mt-4">
-                <strong>L'Orée du Bien-Être</strong><br />
-                123 Avenue de la Forêt<br />
-                75016 Paris, France<br />
-                Email : contact@oree-bien-etre.fr<br />
+                <strong>Le.kB - Cabinet de Kinésithérapie</strong><br />
+                123 Avenue de la Santé<br />
+                75014 Paris, France<br />
+                Email : contact@lekb.fr<br />
                 Téléphone : 01 23 45 67 89
               </p>
             </div>
