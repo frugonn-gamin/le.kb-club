@@ -2,14 +2,17 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
-const navItems = [
+const navItemsLeft = [
   { label: "Le lieu", href: "/lieu" },
   { label: "Patients", href: "/patients" },
-  { label: "Professionnels", href: "/professionnels" },
+];
+
+const navItemsRight = [
   { label: "Club", href: "/club" },
-  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
+
+const allNavItems = [...navItemsLeft, ...navItemsRight];
 
 interface NavigationProps {
   variant?: "transparent" | "solid";
@@ -28,18 +31,19 @@ export const Navigation = ({ variant = "transparent" }: NavigationProps) => {
     >
       <nav className="container mx-auto px-8 lg:px-16">
         <div className="flex items-center justify-center h-20 lg:h-28">
-          {/* Desktop Navigation - Centered */}
-          <ul className="hidden lg:flex items-center gap-10">
-            {navItems.slice(0, 3).map((item) => (
-              <li key={item.href}>
-                <Link to={item.href} className="nav-link text-foreground/70 hover:text-foreground transition-all duration-300">
+          {/* Desktop Navigation - Balanced layout */}
+          <ul className="hidden lg:flex items-center">
+            {/* Left side */}
+            <li className="flex items-center gap-12">
+              {navItemsLeft.map((item) => (
+                <Link key={item.href} to={item.href} className="nav-link text-foreground/70 hover:text-foreground transition-all duration-300">
                   {item.label}
                 </Link>
-              </li>
-            ))}
+              ))}
+            </li>
             
-            {/* Logo - Center */}
-            <li className="mx-8">
+            {/* Logo - Center with equal spacing */}
+            <li className="mx-16">
               <Link
                 to="/"
                 className="font-serif text-xl lg:text-2xl font-normal tracking-[-0.01em] transition-opacity hover:opacity-70"
@@ -48,13 +52,14 @@ export const Navigation = ({ variant = "transparent" }: NavigationProps) => {
               </Link>
             </li>
             
-            {navItems.slice(3).map((item) => (
-              <li key={item.href}>
-                <Link to={item.href} className="nav-link text-foreground/70 hover:text-foreground transition-all duration-300">
+            {/* Right side */}
+            <li className="flex items-center gap-12">
+              {navItemsRight.map((item) => (
+                <Link key={item.href} to={item.href} className="nav-link text-foreground/70 hover:text-foreground transition-all duration-300">
                   {item.label}
                 </Link>
-              </li>
-            ))}
+              ))}
+            </li>
           </ul>
 
           {/* Mobile: Logo left, menu right */}
@@ -83,13 +88,13 @@ export const Navigation = ({ variant = "transparent" }: NavigationProps) => {
             isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <ul className="py-6 space-y-6 border-t border-border/50">
-            {navItems.map((item) => (
+          <ul className="py-6 space-y-6 border-t border-border/50 text-center">
+            {allNavItems.map((item) => (
               <li key={item.href}>
                 <Link
                   to={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="nav-link block text-foreground/80 hover:text-foreground transition-colors"
+                  className="nav-link inline-block text-foreground/80 hover:text-foreground transition-colors"
                 >
                   {item.label}
                 </Link>
