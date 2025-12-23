@@ -1,21 +1,4 @@
-import { motion } from "framer-motion";
-
 export const Hero = () => {
-  const clipReveal = {
-    hidden: { clipPath: "inset(0 100% 0 0)" },
-    visible: { clipPath: "inset(0 0% 0 0)" }
-  };
-
-  const lineReveal = {
-    hidden: { scaleX: 0, opacity: 0 },
-    visible: { scaleX: 1, opacity: 1 }
-  };
-
-  const fadeUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  };
-
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* Animated gradient background (placeholder for video) */}
@@ -29,48 +12,25 @@ export const Hero = () => {
 
       {/* Content */}
       <div className="relative h-full flex flex-col items-center justify-center px-6 text-center">
-        {/* Logo - Clip Path Reveal Animation */}
-        <h1>
-          <motion.span 
-            className="block font-serif text-7xl sm:text-8xl md:text-9xl lg:text-[11rem] font-normal tracking-[-0.02em] text-foreground"
-            initial="hidden"
-            animate="visible"
-            variants={clipReveal}
-            transition={{ duration: 1.2, ease: [0.77, 0, 0.175, 1], delay: 0.3 }}
-          >
+        {/* Logo - Premium typography */}
+        <h1 className="animate-fade-in-slow">
+          <span className="block font-serif text-7xl sm:text-8xl md:text-9xl lg:text-[11rem] font-normal tracking-[-0.02em] text-foreground">
             Le<span className="text-accent-foreground/40">.</span>kB
-          </motion.span>
+          </span>
         </h1>
 
         {/* Decorative line */}
-        <motion.div 
-          className="mt-8 w-12 h-px bg-foreground/20 origin-center"
-          initial="hidden"
-          animate="visible"
-          variants={lineReveal}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 1.3 }}
-        />
+        <div className="animate-fade-in-delayed mt-8 w-12 h-px bg-foreground/20" />
 
         {/* Baseline - Refined spacing */}
-        <motion.p 
-          className="mt-6 md:mt-8 font-sans text-xs md:text-sm font-medium tracking-[0.3em] uppercase text-muted-foreground"
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 1.5 }}
-        >
+        <p className="animate-fade-in-delayed mt-6 md:mt-8 font-sans text-xs md:text-sm font-medium tracking-[0.3em] uppercase text-muted-foreground">
           club santé & bien-être
-        </motion.p>
+        </p>
 
         {/* Scroll indicator - Minimal */}
-        <motion.div 
-          className="absolute bottom-16 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 1.8 }}
-        >
+        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 animate-fade-in-delayed">
           <div className="w-px h-16 bg-gradient-to-b from-foreground/20 to-transparent" />
-        </motion.div>
+        </div>
       </div>
     </section>
   );
