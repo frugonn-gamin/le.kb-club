@@ -1,7 +1,8 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
-import { fadeInUp, fadeIn, scaleIn, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
+import { fadeInUp, scaleIn, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import lieuHeroImage from "@/assets/lieu-hero.png";
 import lieuAttenteImage from "@/assets/lieu-attente.png";
 import lieuConsultationImage from "@/assets/lieu-consultation.jpeg";
@@ -36,10 +37,11 @@ const LeLieu = () => {
       {/* Image placeholder */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <motion.img 
+          <OptimizedImage 
             src={lieuHeroImage} 
             alt="Consultation dans l'espace Le.kB" 
-            className="w-full aspect-[16/9] lg:aspect-[21/9] object-cover"
+            className="w-full aspect-[16/9] lg:aspect-[21/9]"
+            priority
             initial="hidden"
             whileInView="visible"
             viewport={defaultViewport}
@@ -182,17 +184,17 @@ const LeLieu = () => {
             viewport={defaultViewport}
             variants={staggerContainer}
           >
-            <motion.img 
+            <OptimizedImage 
               src={lieuAttenteImage} 
               alt="Salle d'attente Le.kB" 
-              className="aspect-[4/5] object-cover w-full"
+              className="aspect-[4/5] w-full"
               variants={scaleIn}
               transition={defaultTransition}
             />
-            <motion.img 
+            <OptimizedImage 
               src={lieuConsultationImage} 
               alt="Consultation pédiatrique Le.kB" 
-              className="aspect-[4/5] object-cover w-full"
+              className="aspect-[4/5] w-full"
               variants={scaleIn}
               transition={defaultTransition}
             />

@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import { fadeInUp, scaleIn, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import therapistImage from "@/assets/therapist-consultation.png";
 
 const Patients = () => {
@@ -86,10 +87,10 @@ const Patients = () => {
       {/* Image Section */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <motion.img 
+          <OptimizedImage 
             src={therapistImage} 
             alt="Consultation avec un thérapeute" 
-            className="w-full aspect-[16/7] object-cover"
+            className="w-full aspect-[16/7]"
             initial="hidden"
             whileInView="visible"
             viewport={defaultViewport}
