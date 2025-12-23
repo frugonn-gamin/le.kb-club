@@ -1,6 +1,8 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import lieuHeroImage from "@/assets/lieu-hero.png";
+import lieuAttenteImage from "@/assets/lieu-attente.png";
+import lieuConsultationImage from "@/assets/lieu-consultation.jpeg";
 
 const LeLieu = () => {
   return (
@@ -121,8 +123,16 @@ const LeLieu = () => {
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
-            <div className="aspect-[4/5] bg-muted/50" />
-            <div className="aspect-[4/5] bg-muted/50" />
+            <img 
+              src={lieuAttenteImage} 
+              alt="Salle d'attente Le.kB" 
+              className="aspect-[4/5] object-cover w-full"
+            />
+            <img 
+              src={lieuConsultationImage} 
+              alt="Consultation pédiatrique Le.kB" 
+              className="aspect-[4/5] object-cover w-full"
+            />
           </div>
         </div>
       </section>
