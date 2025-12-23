@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import lieuHeroImage from "@/assets/lieu-hero.png";
 
 const LeLieu = () => {
   return (
@@ -24,7 +25,11 @@ const LeLieu = () => {
       {/* Image placeholder */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="aspect-[16/9] lg:aspect-[21/9] bg-muted/50 w-full" />
+          <img 
+            src={lieuHeroImage} 
+            alt="Consultation dans l'espace Le.kB" 
+            className="w-full aspect-[16/9] lg:aspect-[21/9] object-cover"
+          />
         </div>
       </section>
 
