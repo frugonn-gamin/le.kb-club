@@ -41,7 +41,7 @@ const LeLieu = () => {
           <ParallaxImage 
             src={lieuHeroImage} 
             alt="Consultation dans l'espace Le.kB" 
-            className="w-full aspect-[16/9] lg:aspect-[21/9]"
+            className="w-full h-[50vh] lg:h-[60vh]"
             parallaxSpeed={0.15}
           />
         </div>
