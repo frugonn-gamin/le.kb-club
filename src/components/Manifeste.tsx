@@ -1,20 +1,7 @@
 import { motion } from "framer-motion";
+import { fadeInUp, fadeIn, lineGrow } from "@/lib/animations";
 
 export const Manifeste = () => {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0 }
-  };
-
-  const fadeIn = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 }
-  };
-
-  const lineGrow = {
-    hidden: { scaleY: 0 },
-    visible: { scaleY: 1 }
-  };
 
   return (
     <section className="py-24 md:py-32 lg:py-40 bg-background">

@@ -1,6 +1,9 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { motion } from "framer-motion";
+import { fadeInUp, scaleIn, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
 import therapistImage from "@/assets/therapist-consultation.png";
+
 const Patients = () => {
   return (
     <main className="min-h-screen bg-background">
@@ -9,7 +12,14 @@ const Patients = () => {
       {/* Hero Section */}
       <section className="pt-32 lg:pt-40 pb-16 lg:pb-24">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto text-center">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            variants={fadeInUp}
+          >
             <span className="inline-block font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6">
               Patients
             </span>
@@ -21,14 +31,20 @@ const Patients = () => {
               Chez Le.kB, nous croyons que le soin commence par l'écoute. 
               Prenez le temps qu'il vous faut, nous sommes là pour vous accompagner.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Reassurance Section */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+          <motion.div 
+            className="grid lg:grid-cols-3 gap-8 lg:gap-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            variants={staggerContainer}
+          >
             {[
               {
                 number: "01",
@@ -46,7 +62,12 @@ const Patients = () => {
                 description: "Pas de précipitation. Nous prenons le temps nécessaire pour chaque consultation, chaque soin, chaque étape."
               }
             ].map((item, index) => (
-              <div key={index} className="border-t border-border pt-8">
+              <motion.div 
+                key={index} 
+                className="border-t border-border pt-8"
+                variants={fadeInUp}
+                transition={defaultTransition}
+              >
                 <span className="font-sans text-xs tracking-[0.2em] text-muted-foreground/60 mb-4 block">
                   {item.number}
                 </span>
@@ -56,19 +77,24 @@ const Patients = () => {
                 <p className="font-sans text-sm lg:text-base text-muted-foreground leading-relaxed">
                   {item.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Image Section */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <img 
+          <motion.img 
             src={therapistImage} 
             alt="Consultation avec un thérapeute" 
             className="w-full aspect-[16/7] object-cover"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            variants={scaleIn}
           />
         </div>
       </section>
@@ -77,7 +103,14 @@ const Patients = () => {
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
-            <div className="lg:col-span-5">
+            <motion.div 
+              className="lg:col-span-5"
+              initial="hidden"
+              whileInView="visible"
+              viewport={defaultViewport}
+              transition={defaultTransition}
+              variants={fadeInUp}
+            >
               <span className="inline-block font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
                 Votre parcours
               </span>
@@ -88,8 +121,14 @@ const Patients = () => {
                 Votre première visite est un moment de découverte mutuelle. 
                 Voici comment se déroule généralement votre parcours chez nous.
               </p>
-            </div>
-            <div className="lg:col-span-6 lg:col-start-7">
+            </motion.div>
+            <motion.div 
+              className="lg:col-span-6 lg:col-start-7"
+              initial="hidden"
+              whileInView="visible"
+              viewport={defaultViewport}
+              variants={staggerContainer}
+            >
               <div className="space-y-8">
                 {[
                   {
@@ -109,7 +148,12 @@ const Patients = () => {
                     detail: "Des rendez-vous de suivi pour ajuster, accompagner et mesurer votre progression dans la durée."
                   }
                 ].map((item, index) => (
-                  <div key={index} className="flex gap-6">
+                  <motion.div 
+                    key={index} 
+                    className="flex gap-6"
+                    variants={fadeInUp}
+                    transition={defaultTransition}
+                  >
                     <div className="flex-shrink-0 w-8 h-8 rounded-full border border-border flex items-center justify-center">
                       <span className="font-sans text-xs text-muted-foreground">{index + 1}</span>
                     </div>
@@ -121,10 +165,10 @@ const Patients = () => {
                         {item.detail}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -132,16 +176,29 @@ const Patients = () => {
       {/* FAQ Section */}
       <section className="py-20 lg:py-32 bg-secondary/30">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-xl mx-auto text-center mb-16">
+          <motion.div 
+            className="max-w-xl mx-auto text-center mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            transition={defaultTransition}
+            variants={fadeInUp}
+          >
             <span className="inline-block font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
               Questions fréquentes
             </span>
             <h2 className="font-serif text-2xl lg:text-3xl font-normal tracking-[-0.01em] text-foreground">
               Vos interrogations
             </h2>
-          </div>
+          </motion.div>
           
-          <div className="max-w-3xl mx-auto divide-y divide-border">
+          <motion.div 
+            className="max-w-3xl mx-auto divide-y divide-border"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            variants={staggerContainer}
+          >
             {[
               {
                 question: "Comment prendre rendez-vous ?",
@@ -160,34 +217,47 @@ const Patients = () => {
                 answer: "Oui, nous vous demandons simplement de nous prévenir au moins 48 heures à l'avance pour permettre à d'autres patients de bénéficier du créneau."
               }
             ].map((item, index) => (
-              <div key={index} className="py-8">
+              <motion.div 
+                key={index} 
+                className="py-8"
+                variants={fadeInUp}
+                transition={defaultTransition}
+              >
                 <h3 className="font-serif text-lg lg:text-xl font-normal text-foreground mb-3">
                   {item.question}
                 </h3>
                 <p className="font-sans text-sm lg:text-base text-muted-foreground leading-relaxed">
                   {item.answer}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 lg:py-32">
         <div className="container mx-auto px-8 lg:px-16 text-center">
-          <h2 className="font-serif text-2xl lg:text-3xl font-normal text-foreground mb-4">
-            Prêt à nous rencontrer ?
-          </h2>
-          <p className="font-sans text-base text-muted-foreground mb-8 max-w-lg mx-auto">
-            Faites le premier pas vers un accompagnement bienveillant et personnalisé.
-          </p>
-          <a 
-            href="/contact" 
-            className="inline-block font-sans text-xs tracking-[0.2em] uppercase text-foreground border-b border-foreground pb-1 hover:opacity-70 transition-opacity"
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            transition={defaultTransition}
+            variants={fadeInUp}
           >
-            Prendre rendez-vous
-          </a>
+            <h2 className="font-serif text-2xl lg:text-3xl font-normal text-foreground mb-4">
+              Prêt à nous rencontrer ?
+            </h2>
+            <p className="font-sans text-base text-muted-foreground mb-8 max-w-lg mx-auto">
+              Faites le premier pas vers un accompagnement bienveillant et personnalisé.
+            </p>
+            <a 
+              href="/contact" 
+              className="inline-block font-sans text-xs tracking-[0.2em] uppercase text-foreground border-b border-foreground pb-1 hover:opacity-70 transition-opacity"
+            >
+              Prendre rendez-vous
+            </a>
+          </motion.div>
         </div>
       </section>
 
