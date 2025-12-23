@@ -1,72 +1,79 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, forwardRef } from "react";
 import { motion, HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-interface OptimizedImageProps extends Omit<HTMLMotionProps<"img">, "src"> {
+interface OptimizedImageProps extends Omit<HTMLMotionProps<"div">, "src"> {
   src: string;
   alt: string;
   className?: string;
-  priority?: boolean; // For above-the-fold images
+  priority?: boolean;
 }
 
-export const OptimizedImage = ({
-  src,
-  alt,
-  className,
-  priority = false,
-  ...motionProps
-}: OptimizedImageProps) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(priority);
-  const imgRef = useRef<HTMLImageElement>(null);
+export const OptimizedImage = forwardRef<HTMLDivElement, OptimizedImageProps>(
+  ({ src, alt, className, priority = false, ...motionProps }, ref) => {
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [isInView, setIsInView] = useState(priority);
+    const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (priority) {
-      setIsInView(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-          observer.disconnect();
-        }
-      },
-      {
-        rootMargin: "200px", // Start loading 200px before entering viewport
-        threshold: 0,
+    useEffect(() => {
+      if (priority) {
+        setIsInView(true);
+        return;
       }
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            observer.disconnect();
+          }
+        },
+        {
+          rootMargin: "200px",
+          threshold: 0,
+        }
+      );
+
+      if (containerRef.current) {
+        observer.observe(containerRef.current);
+      }
+
+      return () => observer.disconnect();
+    }, [priority]);
+
+    return (
+      <motion.div
+        ref={(node) => {
+          containerRef.current = node;
+          if (typeof ref === "function") {
+            ref(node);
+          } else if (ref) {
+            ref.current = node;
+          }
+        }}
+        className={cn("relative overflow-hidden", className)}
+        {...motionProps}
+      >
+        {!isLoaded && (
+          <div className="absolute inset-0 bg-muted/50 animate-pulse" />
+        )}
+
+        {isInView && (
+          <img
+            src={src}
+            alt={alt}
+            loading={priority ? "eager" : "lazy"}
+            decoding="async"
+            onLoad={() => setIsLoaded(true)}
+            className={cn(
+              "w-full h-full object-cover transition-opacity duration-500",
+              isLoaded ? "opacity-100" : "opacity-0"
+            )}
+          />
+        )}
+      </motion.div>
     );
+  }
+);
 
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [priority]);
-
-  return (
-    <div ref={imgRef as React.RefObject<HTMLDivElement>} className={cn("relative overflow-hidden", className)}>
-      {/* Placeholder skeleton */}
-      {!isLoaded && (
-        <div className="absolute inset-0 bg-muted/50 animate-pulse" />
-      )}
-      
-      {isInView && (
-        <motion.img
-          src={src}
-          alt={alt}
-          loading={priority ? "eager" : "lazy"}
-          decoding="async"
-          onLoad={() => setIsLoaded(true)}
-          className={cn(
-            "w-full h-full object-cover transition-opacity duration-500",
-            isLoaded ? "opacity-100" : "opacity-0"
-          )}
-          {...motionProps}
-        />
-      )}
-    </div>
-  );
-};
+OptimizedImage.displayName = "OptimizedImage";
