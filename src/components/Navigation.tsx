@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "./NavLink";
+import logo from "@/assets/logo.jpg";
 
 const navItemsLeft = [
   { label: "Le lieu", href: "/lieu" },
@@ -52,9 +53,9 @@ export const Navigation = ({ variant = "transparent" }: NavigationProps) => {
             <li className="mx-16">
               <Link
                 to="/"
-                className="font-serif text-xl lg:text-2xl font-normal tracking-[-0.01em] transition-opacity hover:opacity-70"
+                className="transition-opacity hover:opacity-70"
               >
-                Le<span className="text-muted-foreground/50">.</span>kB
+                <img src={logo} alt="Le.kB" className="h-10 lg:h-12 w-auto" />
               </Link>
             </li>
             
@@ -77,9 +78,9 @@ export const Navigation = ({ variant = "transparent" }: NavigationProps) => {
           <div className="lg:hidden flex items-center justify-between w-full">
             <Link
               to="/"
-              className="font-serif text-xl font-normal tracking-[-0.01em] transition-opacity hover:opacity-70"
+              className="transition-opacity hover:opacity-70"
             >
-              Le<span className="text-muted-foreground/50">.</span>kB
+              <img src={logo} alt="Le.kB" className="h-8 w-auto" />
             </Link>
 
             {/* Mobile Menu Button */}
