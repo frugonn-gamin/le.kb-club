@@ -1,0 +1,21 @@
+{
+  "name": "Le.kB — Club Santé & Bien-être",
+  "short_name": "Le.kB",
+  "description": "Un lieu dédié au corps, à l'esprit et à l'équilibre.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a1a1a",
+  "icons": [
+    {
+      "src": "/favicon.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/favicon.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
