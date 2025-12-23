@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import { fadeInUp, scaleIn, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
 import { OptimizedImage } from "@/components/OptimizedImage";
+import { ParallaxImage } from "@/components/ParallaxImage";
 import lieuHeroImage from "@/assets/lieu-hero.png";
 import lieuAttenteImage from "@/assets/lieu-attente.png";
 import lieuConsultationImage from "@/assets/lieu-consultation.jpeg";
@@ -34,19 +35,14 @@ const LeLieu = () => {
         </div>
       </section>
 
-      {/* Image placeholder */}
+      {/* Hero Image with Parallax */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <OptimizedImage 
+          <ParallaxImage 
             src={lieuHeroImage} 
             alt="Consultation dans l'espace Le.kB" 
             className="w-full aspect-[16/9] lg:aspect-[21/9]"
-            priority
-            initial="hidden"
-            whileInView="visible"
-            viewport={defaultViewport}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            variants={scaleIn}
+            parallaxSpeed={0.15}
           />
         </div>
       </section>
