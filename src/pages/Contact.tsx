@@ -6,9 +6,10 @@ import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import contactSalleImage from "@/assets/contact-salle.png";
-
 const Contact = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,42 +18,44 @@ const Contact = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
     toast({
       title: "Message envoyé",
-      description: "Nous vous répondrons dans les meilleurs délais.",
+      description: "Nous vous répondrons dans les meilleurs délais."
     });
-    
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: ""
+    });
     setIsSubmitting(false);
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
   };
-
-  return (
-    <main className="min-h-screen bg-background">
+  return <main className="min-h-screen bg-background">
       <Navigation variant="solid" />
       
       {/* Hero Section */}
       <section className="pt-32 lg:pt-40 pb-16 lg:pb-24">
         <div className="container mx-auto px-8 lg:px-16">
-          <motion.div 
-            className="max-w-4xl mx-auto text-center"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            variants={fadeInUp}
-          >
+          <motion.div className="max-w-4xl mx-auto text-center" initial="hidden" whileInView="visible" viewport={{
+          once: true,
+          margin: "-100px"
+        }} transition={{
+          duration: 0.8,
+          ease: "easeOut"
+        }} variants={fadeInUp}>
             <span className="inline-block font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6">
               Contact
             </span>
@@ -70,13 +73,7 @@ const Contact = () => {
           <div className="grid lg:grid-cols-12 gap-16 lg:gap-20">
             
             {/* Info Column */}
-            <motion.div 
-              className="lg:col-span-4 order-2 lg:order-1"
-              initial="hidden"
-              whileInView="visible"
-              viewport={defaultViewport}
-              variants={staggerContainer}
-            >
+            <motion.div className="lg:col-span-4 order-2 lg:order-1" initial="hidden" whileInView="visible" viewport={defaultViewport} variants={staggerContainer}>
               <div className="space-y-12">
                 {/* Address */}
                 <motion.div variants={fadeInUp} transition={defaultTransition}>
@@ -108,22 +105,13 @@ const Contact = () => {
                     Nous joindre
                   </h3>
                   <div className="space-y-2">
-                    <a 
-                      href="tel:+33375050012" 
-                      className="block font-sans text-base text-foreground hover:opacity-70 transition-opacity"
-                    >
+                    <a href="tel:+33375050012" className="block font-sans text-base text-foreground hover:opacity-70 transition-opacity">
                       03 75 05 00 12
                     </a>
-                    <a 
-                      href="mailto:info@lekb.club" 
-                      className="block font-sans text-base text-foreground hover:opacity-70 transition-opacity"
-                    >
+                    <a href="mailto:info@lekb.club" className="block font-sans text-base text-foreground hover:opacity-70 transition-opacity">
                       info@lekb.club
                     </a>
-                    <a 
-                      href="mailto:info@lekb.pro" 
-                      className="block font-sans text-base text-foreground hover:opacity-70 transition-opacity"
-                    >
+                    <a href="mailto:info@lekb.pro" className="block font-sans text-base text-foreground hover:opacity-70 transition-opacity">
                       info@lekb.pro <span className="text-muted-foreground text-sm">(professionnels)</span>
                     </a>
                   </div>
@@ -135,102 +123,52 @@ const Contact = () => {
                     Accès
                   </h3>
                   <div className="space-y-2 font-sans text-sm text-muted-foreground">
-                    <p>Tram B – Arrêt Victoire</p>
-                    <p>Parking à proximité</p>
+                    <p>Parking devant Le.kB</p>
                     <p>Accès PMR disponible</p>
-                  </div>
+                    <p>Train Ligne P (5 min à Pied)</p><p>Train Ligne P (5 min à Pied)</p></div>
                 </motion.div>
               </div>
             </motion.div>
 
             {/* Form Column */}
-            <motion.div 
-              className="lg:col-span-7 lg:col-start-6 order-1 lg:order-2"
-              initial="hidden"
-              whileInView="visible"
-              viewport={defaultViewport}
-              transition={{ ...defaultTransition, delay: 0.2 }}
-              variants={fadeInUp}
-            >
+            <motion.div className="lg:col-span-7 lg:col-start-6 order-1 lg:order-2" initial="hidden" whileInView="visible" viewport={defaultViewport} transition={{
+            ...defaultTransition,
+            delay: 0.2
+          }} variants={fadeInUp}>
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid sm:grid-cols-2 gap-6">
                   {/* Name */}
                   <div>
-                    <label 
-                      htmlFor="name" 
-                      className="block font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground mb-3"
-                    >
+                    <label htmlFor="name" className="block font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground mb-3">
                       Nom complet
                     </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full bg-transparent border-b border-border py-3 font-sans text-base text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors"
-                      placeholder="Votre nom"
-                    />
+                    <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full bg-transparent border-b border-border py-3 font-sans text-base text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors" placeholder="Votre nom" />
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label 
-                      htmlFor="email" 
-                      className="block font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground mb-3"
-                    >
+                    <label htmlFor="email" className="block font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground mb-3">
                       Email
                     </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full bg-transparent border-b border-border py-3 font-sans text-base text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors"
-                      placeholder="votre@email.com"
-                    />
+                    <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className="w-full bg-transparent border-b border-border py-3 font-sans text-base text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors" placeholder="votre@email.com" />
                   </div>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-6">
                   {/* Phone */}
                   <div>
-                    <label 
-                      htmlFor="phone" 
-                      className="block font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground mb-3"
-                    >
+                    <label htmlFor="phone" className="block font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground mb-3">
                       Téléphone
                     </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full bg-transparent border-b border-border py-3 font-sans text-base text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors"
-                      placeholder="06 00 00 00 00"
-                    />
+                    <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="w-full bg-transparent border-b border-border py-3 font-sans text-base text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors" placeholder="06 00 00 00 00" />
                   </div>
 
                   {/* Subject */}
                   <div>
-                    <label 
-                      htmlFor="subject" 
-                      className="block font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground mb-3"
-                    >
+                    <label htmlFor="subject" className="block font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground mb-3">
                       Objet
                     </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full bg-transparent border-b border-border py-3 font-sans text-base text-foreground focus:outline-none focus:border-foreground transition-colors appearance-none cursor-pointer"
-                    >
+                    <select id="subject" name="subject" value={formData.subject} onChange={handleChange} required className="w-full bg-transparent border-b border-border py-3 font-sans text-base text-foreground focus:outline-none focus:border-foreground transition-colors appearance-none cursor-pointer">
                       <option value="" disabled>Choisir un objet</option>
                       <option value="rdv">Prise de rendez-vous</option>
                       <option value="info">Demande d'information</option>
@@ -242,31 +180,15 @@ const Contact = () => {
 
                 {/* Message */}
                 <div>
-                  <label 
-                    htmlFor="message" 
-                    className="block font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground mb-3"
-                  >
+                  <label htmlFor="message" className="block font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground mb-3">
                     Message
                   </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="w-full bg-transparent border-b border-border py-3 font-sans text-base text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors resize-none"
-                    placeholder="Votre message..."
-                  />
+                  <textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={5} className="w-full bg-transparent border-b border-border py-3 font-sans text-base text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors resize-none" placeholder="Votre message..." />
                 </div>
 
                 {/* Submit */}
                 <div className="pt-4">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="inline-flex items-center font-sans text-xs tracking-[0.2em] uppercase text-foreground border border-foreground px-8 py-4 hover:bg-foreground hover:text-background transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
+                  <button type="submit" disabled={isSubmitting} className="inline-flex items-center font-sans text-xs tracking-[0.2em] uppercase text-foreground border border-foreground px-8 py-4 hover:bg-foreground hover:text-background transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
                     {isSubmitting ? "Envoi en cours..." : "Envoyer le message"}
                   </button>
                 </div>
@@ -279,17 +201,11 @@ const Contact = () => {
       {/* Image section with Parallax */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <OptimizedImage 
-            src={contactSalleImage} 
-            alt="Salle d'accueil Le.kB" 
-            className="w-full aspect-[21/9]"
-          />
+          <OptimizedImage src={contactSalleImage} alt="Salle d'accueil Le.kB" className="w-full aspect-[21/9]" />
         </div>
       </section>
 
       <Footer />
-    </main>
-  );
+    </main>;
 };
-
 export default Contact;
