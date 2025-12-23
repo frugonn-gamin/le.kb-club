@@ -1,4 +1,21 @@
+import { motion } from "framer-motion";
+
 export const Hero = () => {
+  const splitReveal = {
+    hidden: { opacity: 0, y: 50, rotateX: -15 },
+    visible: { opacity: 1, y: 0, rotateX: 0 }
+  };
+
+  const lineReveal = {
+    hidden: { scaleX: 0, opacity: 0 },
+    visible: { scaleX: 1, opacity: 1 }
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* Animated gradient background (placeholder for video) */}
@@ -12,25 +29,72 @@ export const Hero = () => {
 
       {/* Content */}
       <div className="relative h-full flex flex-col items-center justify-center px-6 text-center">
-        {/* Logo - Premium typography */}
-        <h1 className="animate-fade-in-slow">
-          <span className="block font-serif text-7xl sm:text-8xl md:text-9xl lg:text-[11rem] font-normal tracking-[-0.02em] text-foreground">
-            Le<span className="text-accent-foreground/40">.</span>kB
+        {/* Logo - Split Reveal Animation */}
+        <h1 className="overflow-hidden perspective-[1000px]">
+          <span className="flex items-baseline font-serif text-7xl sm:text-8xl md:text-9xl lg:text-[11rem] font-normal tracking-[-0.02em] text-foreground">
+            {/* "Le" part */}
+            <motion.span
+              className="inline-block origin-bottom"
+              initial="hidden"
+              animate="visible"
+              variants={splitReveal}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            >
+              Le
+            </motion.span>
+            
+            {/* "." separator */}
+            <motion.span
+              className="inline-block text-accent-foreground/40 origin-center"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, ease: "easeOut", delay: 0.7 }}
+            >
+              .
+            </motion.span>
+            
+            {/* "kB" part */}
+            <motion.span
+              className="inline-block origin-bottom"
+              initial="hidden"
+              animate="visible"
+              variants={splitReveal}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
+            >
+              kB
+            </motion.span>
           </span>
         </h1>
 
         {/* Decorative line */}
-        <div className="animate-fade-in-delayed mt-8 w-12 h-px bg-foreground/20" />
+        <motion.div 
+          className="mt-8 w-12 h-px bg-foreground/20 origin-center"
+          initial="hidden"
+          animate="visible"
+          variants={lineReveal}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 1.1 }}
+        />
 
         {/* Baseline - Refined spacing */}
-        <p className="animate-fade-in-delayed mt-6 md:mt-8 font-sans text-xs md:text-sm font-medium tracking-[0.3em] uppercase text-muted-foreground">
+        <motion.p 
+          className="mt-6 md:mt-8 font-sans text-xs md:text-sm font-medium tracking-[0.3em] uppercase text-muted-foreground"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 1.3 }}
+        >
           club santé & bien-être
-        </p>
+        </motion.p>
 
         {/* Scroll indicator - Minimal */}
-        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 animate-fade-in-delayed">
+        <motion.div 
+          className="absolute bottom-16 left-1/2 -translate-x-1/2"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 1.6 }}
+        >
           <div className="w-px h-16 bg-gradient-to-b from-foreground/20 to-transparent" />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
