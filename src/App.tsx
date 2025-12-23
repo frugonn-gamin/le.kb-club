@@ -2,17 +2,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import LeLieu from "./pages/LeLieu";
-import Patients from "./pages/Patients";
-import Professionnels from "./pages/Professionnels";
-import Club from "./pages/Club";
-import Contact from "./pages/Contact";
-import MentionsLegales from "./pages/MentionsLegales";
-import Confidentialite from "./pages/Confidentialite";
-import CGV from "./pages/CGV";
-import NotFound from "./pages/NotFound";
+import { BrowserRouter } from "react-router-dom";
+import { AnimatedRoutes } from "./components/AnimatedRoutes";
 
 const queryClient = new QueryClient();
 
@@ -22,19 +13,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/lieu" element={<LeLieu />} />
-          <Route path="/patients" element={<Patients />} />
-          <Route path="/professionnels" element={<Professionnels />} />
-          <Route path="/club" element={<Club />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/mentions-legales" element={<MentionsLegales />} />
-          <Route path="/confidentialite" element={<Confidentialite />} />
-          <Route path="/cgv" element={<CGV />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AnimatedRoutes />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
