@@ -3,8 +3,8 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
-import { fadeInUp, scaleIn, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
-import { OptimizedImage } from "@/components/OptimizedImage";
+import { fadeInUp, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
+import { ParallaxImage } from "@/components/ParallaxImage";
 import contactSalleImage from "@/assets/contact-salle.png";
 
 const Contact = () => {
@@ -270,18 +270,14 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Image section */}
+      {/* Image section with Parallax */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <OptimizedImage 
+          <ParallaxImage 
             src={contactSalleImage} 
             alt="Salle d'accueil Le.kB" 
             className="w-full aspect-[21/9]"
-            initial="hidden"
-            whileInView="visible"
-            viewport={defaultViewport}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            variants={scaleIn}
+            parallaxSpeed={0.15}
           />
         </div>
       </section>
