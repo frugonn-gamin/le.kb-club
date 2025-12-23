@@ -1,9 +1,11 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import { Building2, Users, Calendar, Lightbulb, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
+import professionnelsHero from "@/assets/professionnels-hero.png";
 
 const Professionnels = () => {
   return (
@@ -84,17 +86,22 @@ const Professionnels = () => {
         </div>
       </section>
 
-      {/* Image placeholder */}
+      {/* Image Section */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <motion.div 
-            className="aspect-[16/7] bg-muted/50 w-full"
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={defaultViewport}
             transition={{ duration: 0.8, ease: "easeOut" }}
             variants={fadeInUp}
-          />
+          >
+            <OptimizedImage
+              src={professionnelsHero}
+              alt="Praticiens de santé et bien-être au travail - psychologue, ostéopathe, aromathérapeute et thérapeute"
+              className="w-full aspect-[16/7] object-cover"
+            />
+          </motion.div>
         </div>
       </section>
 
