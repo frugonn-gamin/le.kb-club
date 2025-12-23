@@ -85,8 +85,8 @@ const Contact = () => {
                   </h3>
                   <p className="font-serif text-lg text-foreground leading-relaxed">
                     Le.kB<br />
-                    12 rue de la Santé<br />
-                    33000 Bordeaux
+                    5 rue des Bains<br />
+                    02400 Château-Thierry
                   </p>
                 </motion.div>
 
@@ -109,16 +109,22 @@ const Contact = () => {
                   </h3>
                   <div className="space-y-2">
                     <a 
-                      href="tel:+33500000000" 
+                      href="tel:+33375050012" 
                       className="block font-sans text-base text-foreground hover:opacity-70 transition-opacity"
                     >
-                      05 00 00 00 00
+                      03 75 05 00 12
                     </a>
                     <a 
-                      href="mailto:contact@lekb.club" 
+                      href="mailto:info@lekb.club" 
                       className="block font-sans text-base text-foreground hover:opacity-70 transition-opacity"
                     >
-                      contact@lekb.club
+                      info@lekb.club
+                    </a>
+                    <a 
+                      href="mailto:info@lekb.pro" 
+                      className="block font-sans text-base text-foreground hover:opacity-70 transition-opacity"
+                    >
+                      info@lekb.pro <span className="text-muted-foreground text-sm">(professionnels)</span>
                     </a>
                   </div>
                 </motion.div>
