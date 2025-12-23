@@ -1,6 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-
+import therapistImage from "@/assets/therapist-consultation.png";
 const Patients = () => {
   return (
     <main className="min-h-screen bg-background">
@@ -62,10 +62,14 @@ const Patients = () => {
         </div>
       </section>
 
-      {/* Image placeholder */}
+      {/* Image Section */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="aspect-[16/7] bg-muted/50 w-full" />
+          <img 
+            src={therapistImage} 
+            alt="Consultation avec un thérapeute" 
+            className="w-full aspect-[16/7] object-cover"
+          />
         </div>
       </section>
 
