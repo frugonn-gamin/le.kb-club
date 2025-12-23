@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+  # Site principal lekb.club
+  lekb-main:
+    build: .
+    container_name: lekb-main
+    restart: unless-stopped
+    networks:
+      - lekb-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.lekb-main.rule=Host(`lekb.club`) || Host(`www.lekb.club`)"
+      - "traefik.http.routers.lekb-main.entrypoints=websecure"
+      - "traefik.http.routers.lekb-main.tls.certresolver=letsencrypt"
+      - "traefik.http.services.lekb-main.loadbalancer.server.port=80"
+
+  # Espace membres membres.lekb.club
+  lekb-membres:
+    build:
+      context: .
+    container_name: lekb-membres
+    restart: unless-stopped
+    networks:
+      - lekb-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.lekb-membres.rule=Host(`membres.lekb.club`)"
+      - "traefik.http.routers.lekb-membres.entrypoints=websecure"
+      - "traefik.http.routers.lekb-membres.tls.certresolver=letsencrypt"
+      - "traefik.http.services.lekb-membres.loadbalancer.server.port=80"
+
+  # Site pro lekb.pro
+  lekb-pro:
+    build:
+      context: .
+    container_name: lekb-pro
+    restart: unless-stopped
+    networks:
+      - lekb-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.lekb-pro.rule=Host(`lekb.pro`) || Host(`www.lekb.pro`)"
+      - "traefik.http.routers.lekb-pro.entrypoints=websecure"
+      - "traefik.http.routers.lekb-pro.tls.certresolver=letsencrypt"
+      - "traefik.http.services.lekb-pro.loadbalancer.server.port=80"
+
+  # Site B2B lekb.care
+  lekb-care:
+    build:
+      context: .
+    container_name: lekb-care
+    restart: unless-stopped
+    networks:
+      - lekb-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.lekb-care.rule=Host(`lekb.care`) || Host(`www.lekb.care`)"
+      - "traefik.http.routers.lekb-care.entrypoints=websecure"
+      - "traefik.http.routers.lekb-care.tls.certresolver=letsencrypt"
+      - "traefik.http.services.lekb-care.loadbalancer.server.port=80"
+
+  # Traefik Reverse Proxy
+  traefik:
+    image: traefik:v3.0
+    container_name: traefik
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik/acme.json:/acme.json
+      - ./traefik/traefik.yml:/traefik.yml:ro
+    networks:
+      - lekb-network
+
+networks:
+  lekb-network:
+    driver: bridge

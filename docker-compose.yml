@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  # Application principale lekb.club
+  lekb-main:
+    build: .
+    container_name: lekb-main
+    restart: unless-stopped
+    networks:
+      - lekb-network
+
+  # Traefik Reverse Proxy (gestion automatique SSL + sous-domaines)
+  traefik:
+    image: traefik:v3.0
+    container_name: traefik
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik/acme.json:/acme.json
+      - ./traefik/traefik.yml:/traefik.yml:ro
+    networks:
+      - lekb-network
+    labels:
+      - "traefik.enable=true"
+
+networks:
+  lekb-network:
+    driver: bridge
