@@ -1,6 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { ParallaxImage } from "@/components/ParallaxImage";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import { Building2, Users, Calendar, Lightbulb, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -89,11 +89,10 @@ const Professionnels = () => {
       {/* Image Section with Parallax */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <ParallaxImage
+          <OptimizedImage
             src={professionnelsHero}
             alt="Praticiens de santé et bien-être au travail - psychologue, ostéopathe, aromathérapeute et thérapeute"
             className="w-full aspect-[16/7]"
-            parallaxSpeed={0.15}
           />
         </div>
       </section>

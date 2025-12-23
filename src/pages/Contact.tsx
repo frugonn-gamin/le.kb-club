@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
-import { ParallaxImage } from "@/components/ParallaxImage";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import contactSalleImage from "@/assets/contact-salle.png";
 
 const Contact = () => {
@@ -273,11 +273,10 @@ const Contact = () => {
       {/* Image section with Parallax */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <ParallaxImage 
+          <OptimizedImage 
             src={contactSalleImage} 
             alt="Salle d'accueil Le.kB" 
             className="w-full aspect-[21/9]"
-            parallaxSpeed={0.15}
           />
         </div>
       </section>

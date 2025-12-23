@@ -2,7 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
-import { ParallaxImage } from "@/components/ParallaxImage";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import therapistImage from "@/assets/therapist-consultation.png";
 
 const Patients = () => {
@@ -87,11 +87,10 @@ const Patients = () => {
       {/* Image Section with Parallax */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <ParallaxImage 
+          <OptimizedImage 
             src={therapistImage} 
             alt="Consultation avec un thérapeute" 
             className="w-full aspect-[16/7]"
-            parallaxSpeed={0.15}
           />
         </div>
       </section>
