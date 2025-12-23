@@ -2,6 +2,8 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Building2, Users, Calendar, Lightbulb, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
 
 const Professionnels = () => {
   return (
@@ -11,7 +13,14 @@ const Professionnels = () => {
       {/* Hero Section */}
       <section className="pt-32 lg:pt-40 pb-16 lg:pb-24">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto text-center">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            variants={fadeInUp}
+          >
             <span className="inline-block font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6">
               Espace Professionnels
             </span>
@@ -23,14 +32,20 @@ const Professionnels = () => {
               Le.kB accueille les professionnels de santé et du bien-être 
               qui partagent notre vision d'un accompagnement global, humain et durable.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Values Section */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+          <motion.div 
+            className="grid lg:grid-cols-3 gap-8 lg:gap-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            variants={staggerContainer}
+          >
             {[
               {
                 number: "01",
@@ -48,7 +63,12 @@ const Professionnels = () => {
                 description: "Un espace de travail pensé pour votre confort et celui de vos patients, sans contraintes administratives."
               }
             ].map((item, index) => (
-              <div key={index} className="border-t border-border pt-8">
+              <motion.div 
+                key={index} 
+                className="border-t border-border pt-8"
+                variants={fadeInUp}
+                transition={defaultTransition}
+              >
                 <span className="font-sans text-xs tracking-[0.2em] text-muted-foreground/60 mb-4 block">
                   {item.number}
                 </span>
@@ -58,16 +78,23 @@ const Professionnels = () => {
                 <p className="font-sans text-sm lg:text-base text-muted-foreground leading-relaxed">
                   {item.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Image placeholder */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="aspect-[16/7] bg-muted/50 w-full" />
+          <motion.div 
+            className="aspect-[16/7] bg-muted/50 w-full"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            variants={fadeInUp}
+          />
         </div>
       </section>
 
@@ -75,7 +102,14 @@ const Professionnels = () => {
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
-            <div className="lg:col-span-5">
+            <motion.div 
+              className="lg:col-span-5"
+              initial="hidden"
+              whileInView="visible"
+              viewport={defaultViewport}
+              transition={defaultTransition}
+              variants={fadeInUp}
+            >
               <span className="inline-block font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
                 Notre offre
               </span>
@@ -86,8 +120,14 @@ const Professionnels = () => {
                 Le.kB met à disposition des professionnels de santé un environnement 
                 de travail complet, adapté aux besoins de chacun.
               </p>
-            </div>
-            <div className="lg:col-span-6 lg:col-start-7">
+            </motion.div>
+            <motion.div 
+              className="lg:col-span-6 lg:col-start-7"
+              initial="hidden"
+              whileInView="visible"
+              viewport={defaultViewport}
+              variants={staggerContainer}
+            >
               <div className="grid sm:grid-cols-2 gap-8">
                 {[
                   {
@@ -111,7 +151,12 @@ const Professionnels = () => {
                     description: "Soutien administratif et accès à des formations continues."
                   }
                 ].map((item, index) => (
-                  <div key={index} className="space-y-3">
+                  <motion.div 
+                    key={index} 
+                    className="space-y-3"
+                    variants={fadeInUp}
+                    transition={defaultTransition}
+                  >
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                       <item.icon className="w-5 h-5 text-primary" />
                     </div>
@@ -121,10 +166,10 @@ const Professionnels = () => {
                     <p className="font-sans text-sm text-muted-foreground leading-relaxed">
                       {item.description}
                     </p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -132,16 +177,29 @@ const Professionnels = () => {
       {/* Who we're looking for */}
       <section className="py-20 lg:py-32 bg-secondary/30">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-xl mx-auto text-center mb-16">
+          <motion.div 
+            className="max-w-xl mx-auto text-center mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            transition={defaultTransition}
+            variants={fadeInUp}
+          >
             <span className="inline-block font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
               Profils recherchés
             </span>
             <h2 className="font-serif text-2xl lg:text-3xl font-normal tracking-[-0.01em] text-foreground">
               Qui peut rejoindre Le.kB ?
             </h2>
-          </div>
+          </motion.div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <motion.div 
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            variants={staggerContainer}
+          >
             {[
               "Kinésithérapeutes",
               "Ostéopathes",
@@ -153,30 +211,45 @@ const Professionnels = () => {
               "Podologues",
               "Praticiens en médecines douces"
             ].map((profession, index) => (
-              <div 
+              <motion.div 
                 key={index} 
                 className="bg-background border border-border rounded-lg px-6 py-4 text-center hover:border-primary/50 transition-colors"
+                variants={fadeInUp}
+                transition={defaultTransition}
               >
                 <span className="font-sans text-sm text-foreground">{profession}</span>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Process */}
       <section className="py-20 lg:py-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-xl mx-auto text-center mb-16">
+          <motion.div 
+            className="max-w-xl mx-auto text-center mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            transition={defaultTransition}
+            variants={fadeInUp}
+          >
             <span className="inline-block font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
               Comment nous rejoindre
             </span>
             <h2 className="font-serif text-2xl lg:text-3xl font-normal tracking-[-0.01em] text-foreground">
               Un processus simple et humain
             </h2>
-          </div>
+          </motion.div>
           
-          <div className="max-w-3xl mx-auto">
+          <motion.div 
+            className="max-w-3xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            variants={staggerContainer}
+          >
             <div className="space-y-8">
               {[
                 {
@@ -196,7 +269,12 @@ const Professionnels = () => {
                   detail: "Bienvenue dans la communauté Le.kB ! Vous exercez en toute autonomie au sein de notre collectif."
                 }
               ].map((item, index) => (
-                <div key={index} className="flex gap-6">
+                <motion.div 
+                  key={index} 
+                  className="flex gap-6"
+                  variants={fadeInUp}
+                  transition={defaultTransition}
+                >
                   <div className="flex-shrink-0 w-8 h-8 rounded-full border border-border flex items-center justify-center">
                     <span className="font-sans text-xs text-muted-foreground">{index + 1}</span>
                   </div>
@@ -208,37 +286,45 @@ const Professionnels = () => {
                       {item.detail}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 lg:py-32 bg-primary text-primary-foreground">
         <div className="container mx-auto px-8 lg:px-16 text-center">
-          <h2 className="font-serif text-2xl lg:text-3xl font-normal mb-4">
-            Envie de nous rejoindre ?
-          </h2>
-          <p className="font-sans text-base text-primary-foreground/80 mb-8 max-w-lg mx-auto">
-            Nous sommes toujours à l'écoute de nouveaux profils passionnés par leur métier.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a 
-              href="mailto:info@lekb.pro" 
-              className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.2em] uppercase bg-primary-foreground text-primary px-6 py-3 hover:opacity-90 transition-opacity"
-            >
-              Nous contacter
-              <ArrowRight className="w-4 h-4" />
-            </a>
-            <Link 
-              to="/contact" 
-              className="inline-block font-sans text-xs tracking-[0.2em] uppercase text-primary-foreground border-b border-primary-foreground/50 pb-1 hover:border-primary-foreground transition-colors"
-            >
-              Voir nos coordonnées
-            </Link>
-          </div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            transition={defaultTransition}
+            variants={fadeInUp}
+          >
+            <h2 className="font-serif text-2xl lg:text-3xl font-normal mb-4">
+              Envie de nous rejoindre ?
+            </h2>
+            <p className="font-sans text-base text-primary-foreground/80 mb-8 max-w-lg mx-auto">
+              Nous sommes toujours à l'écoute de nouveaux profils passionnés par leur métier.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a 
+                href="mailto:info@lekb.pro" 
+                className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.2em] uppercase bg-primary-foreground text-primary px-6 py-3 hover:opacity-90 transition-opacity"
+              >
+                Nous contacter
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <Link 
+                to="/contact" 
+                className="inline-block font-sans text-xs tracking-[0.2em] uppercase text-primary-foreground border-b border-primary-foreground/50 pb-1 hover:border-primary-foreground transition-colors"
+              >
+                Voir nos coordonnées
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
+import { motion } from "framer-motion";
+import { fadeInUp, scaleIn, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
 import contactSalleImage from "@/assets/contact-salle.png";
 
 const Contact = () => {
@@ -42,7 +44,14 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="pt-32 lg:pt-40 pb-16 lg:pb-24">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto text-center">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            variants={fadeInUp}
+          >
             <span className="inline-block font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6">
               Contact
             </span>
@@ -50,7 +59,7 @@ const Contact = () => {
               Prenons<br />
               <span className="italic">contact</span>
             </h1>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -60,10 +69,16 @@ const Contact = () => {
           <div className="grid lg:grid-cols-12 gap-16 lg:gap-20">
             
             {/* Info Column */}
-            <div className="lg:col-span-4 order-2 lg:order-1">
+            <motion.div 
+              className="lg:col-span-4 order-2 lg:order-1"
+              initial="hidden"
+              whileInView="visible"
+              viewport={defaultViewport}
+              variants={staggerContainer}
+            >
               <div className="space-y-12">
                 {/* Address */}
-                <div>
+                <motion.div variants={fadeInUp} transition={defaultTransition}>
                   <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">
                     Adresse
                   </h3>
@@ -72,10 +87,10 @@ const Contact = () => {
                     12 rue de la Santé<br />
                     33000 Bordeaux
                   </p>
-                </div>
+                </motion.div>
 
                 {/* Hours */}
-                <div>
+                <motion.div variants={fadeInUp} transition={defaultTransition}>
                   <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">
                     Horaires
                   </h3>
@@ -84,10 +99,10 @@ const Contact = () => {
                     <p>Samedi : 9h – 13h</p>
                     <p className="text-muted-foreground">Dimanche : Fermé</p>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Contact Info */}
-                <div>
+                <motion.div variants={fadeInUp} transition={defaultTransition}>
                   <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">
                     Nous joindre
                   </h3>
@@ -105,10 +120,10 @@ const Contact = () => {
                       contact@lekb.club
                     </a>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Access */}
-                <div>
+                <motion.div variants={fadeInUp} transition={defaultTransition}>
                   <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">
                     Accès
                   </h3>
@@ -117,12 +132,19 @@ const Contact = () => {
                     <p>Parking à proximité</p>
                     <p>Accès PMR disponible</p>
                   </div>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Form Column */}
-            <div className="lg:col-span-7 lg:col-start-6 order-1 lg:order-2">
+            <motion.div 
+              className="lg:col-span-7 lg:col-start-6 order-1 lg:order-2"
+              initial="hidden"
+              whileInView="visible"
+              viewport={defaultViewport}
+              transition={{ ...defaultTransition, delay: 0.2 }}
+              variants={fadeInUp}
+            >
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid sm:grid-cols-2 gap-6">
                   {/* Name */}
@@ -242,7 +264,7 @@ const Contact = () => {
                   </button>
                 </div>
               </form>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -250,10 +272,15 @@ const Contact = () => {
       {/* Image section */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <img 
+          <motion.img 
             src={contactSalleImage} 
             alt="Salle d'accueil Le.kB" 
             className="w-full aspect-[21/9] object-cover"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            variants={scaleIn}
           />
         </div>
       </section>

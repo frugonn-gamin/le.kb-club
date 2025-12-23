@@ -1,5 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
 
 const Club = () => {
   return (
@@ -9,7 +11,14 @@ const Club = () => {
       {/* Hero Section */}
       <section className="pt-32 lg:pt-40 pb-16 lg:pb-24">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto text-center">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            variants={fadeInUp}
+          >
             <span className="inline-block font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6">
               Adhésion
             </span>
@@ -21,14 +30,21 @@ const Club = () => {
               Plus qu'un lieu de soin, Le.kB est une communauté de personnes 
               partageant les mêmes valeurs : l'exigence, la bienveillance et le temps long.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Philosophy */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-3xl mx-auto">
+          <motion.div 
+            className="max-w-3xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            transition={defaultTransition}
+            variants={fadeInUp}
+          >
             <div className="border-l border-border pl-8 lg:pl-12">
               <p className="font-serif text-xl lg:text-2xl text-foreground leading-relaxed italic">
                 "Devenir membre, c'est choisir de s'inscrire dans une démarche 
@@ -36,23 +52,36 @@ const Club = () => {
                 dans un cadre pensé pour durer."
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Benefits */}
       <section className="py-20 lg:py-32 bg-secondary/30">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-xl mx-auto text-center mb-16 lg:mb-24">
+          <motion.div 
+            className="max-w-xl mx-auto text-center mb-16 lg:mb-24"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            transition={defaultTransition}
+            variants={fadeInUp}
+          >
             <span className="inline-block font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
               Avantages
             </span>
             <h2 className="font-serif text-2xl lg:text-3xl font-normal tracking-[-0.01em] text-foreground">
               Ce que l'adhésion vous offre
             </h2>
-          </div>
+          </motion.div>
           
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+          <motion.div 
+            className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            variants={staggerContainer}
+          >
             {[
               {
                 title: "Accès prioritaire",
@@ -79,7 +108,12 @@ const Club = () => {
                 description: "Rejoignez un cercle de personnes partageant vos valeurs et votre vision du bien-être."
               }
             ].map((benefit, index) => (
-              <div key={index} className="flex gap-6">
+              <motion.div 
+                key={index} 
+                className="flex gap-6"
+                variants={fadeInUp}
+                transition={defaultTransition}
+              >
                 <div className="flex-shrink-0 w-2 h-2 rounded-full bg-foreground/30 mt-3" />
                 <div>
                   <h3 className="font-serif text-lg lg:text-xl font-normal text-foreground mb-2">
@@ -89,27 +123,44 @@ const Club = () => {
                     {benefit.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Membership Options */}
       <section className="py-20 lg:py-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-xl mx-auto text-center mb-16 lg:mb-24">
+          <motion.div 
+            className="max-w-xl mx-auto text-center mb-16 lg:mb-24"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            transition={defaultTransition}
+            variants={fadeInUp}
+          >
             <span className="inline-block font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
               Formules
             </span>
             <h2 className="font-serif text-2xl lg:text-3xl font-normal tracking-[-0.01em] text-foreground">
               Choisir son engagement
             </h2>
-          </div>
+          </motion.div>
           
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+          <motion.div 
+            className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            variants={staggerContainer}
+          >
             {/* Individual */}
-            <div className="border border-border p-8 lg:p-12">
+            <motion.div 
+              className="border border-border p-8 lg:p-12"
+              variants={fadeInUp}
+              transition={defaultTransition}
+            >
               <span className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground">
                 Individuel
               </span>
@@ -125,10 +176,14 @@ const Club = () => {
                   Sur demande
                 </span>
               </div>
-            </div>
+            </motion.div>
 
             {/* Family */}
-            <div className="border border-border p-8 lg:p-12 bg-secondary/20">
+            <motion.div 
+              className="border border-border p-8 lg:p-12 bg-secondary/20"
+              variants={fadeInUp}
+              transition={defaultTransition}
+            >
               <span className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground">
                 Famille
               </span>
@@ -144,8 +199,8 @@ const Club = () => {
                   Sur demande
                 </span>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -153,15 +208,28 @@ const Club = () => {
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
-            <div className="lg:col-span-4">
+            <motion.div 
+              className="lg:col-span-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={defaultViewport}
+              transition={defaultTransition}
+              variants={fadeInUp}
+            >
               <span className="inline-block font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
                 Processus
               </span>
               <h2 className="font-serif text-2xl lg:text-3xl font-normal tracking-[-0.01em] text-foreground">
                 Comment adhérer ?
               </h2>
-            </div>
-            <div className="lg:col-span-7 lg:col-start-6">
+            </motion.div>
+            <motion.div 
+              className="lg:col-span-7 lg:col-start-6"
+              initial="hidden"
+              whileInView="visible"
+              viewport={defaultViewport}
+              variants={staggerContainer}
+            >
               <div className="space-y-8">
                 {[
                   {
@@ -181,7 +249,12 @@ const Club = () => {
                     detail: "Finalisez votre adhésion et commencez votre parcours au sein du Le.kB."
                   }
                 ].map((item, index) => (
-                  <div key={index} className="flex gap-6">
+                  <motion.div 
+                    key={index} 
+                    className="flex gap-6"
+                    variants={fadeInUp}
+                    transition={defaultTransition}
+                  >
                     <div className="flex-shrink-0 w-8 h-8 border border-border flex items-center justify-center">
                       <span className="font-sans text-xs text-muted-foreground">{index + 1}</span>
                     </div>
@@ -193,10 +266,10 @@ const Club = () => {
                         {item.detail}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -204,18 +277,26 @@ const Club = () => {
       {/* CTA Section */}
       <section className="py-20 lg:py-32 border-t border-border">
         <div className="container mx-auto px-8 lg:px-16 text-center">
-          <h2 className="font-serif text-2xl lg:text-3xl font-normal text-foreground mb-4">
-            Intéressé par l'adhésion ?
-          </h2>
-          <p className="font-sans text-base text-muted-foreground mb-8 max-w-lg mx-auto">
-            Contactez-nous pour en savoir plus et planifier votre visite découverte.
-          </p>
-          <a 
-            href="/contact" 
-            className="inline-block font-sans text-xs tracking-[0.2em] uppercase text-foreground border-b border-foreground pb-1 hover:opacity-70 transition-opacity"
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            transition={defaultTransition}
+            variants={fadeInUp}
           >
-            Nous contacter
-          </a>
+            <h2 className="font-serif text-2xl lg:text-3xl font-normal text-foreground mb-4">
+              Intéressé par l'adhésion ?
+            </h2>
+            <p className="font-sans text-base text-muted-foreground mb-8 max-w-lg mx-auto">
+              Contactez-nous pour en savoir plus et planifier votre visite découverte.
+            </p>
+            <a 
+              href="/contact" 
+              className="inline-block font-sans text-xs tracking-[0.2em] uppercase text-foreground border-b border-foreground pb-1 hover:opacity-70 transition-opacity"
+            >
+              Nous contacter
+            </a>
+          </motion.div>
         </div>
       </section>
 
