@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
+import contactSalleImage from "@/assets/contact-salle.png";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -246,10 +247,14 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map placeholder */}
+      {/* Image section */}
       <section className="pb-20 lg:pb-32">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="aspect-[21/9] bg-muted/50 w-full" />
+          <img 
+            src={contactSalleImage} 
+            alt="Salle d'accueil Le.kB" 
+            className="w-full aspect-[21/9] object-cover"
+          />
         </div>
       </section>
 
