@@ -11,6 +11,7 @@ import MentionsLegales from "@/pages/MentionsLegales";
 import Confidentialite from "@/pages/Confidentialite";
 import CGV from "@/pages/CGV";
 import NotFound from "@/pages/NotFound";
+import OgImageGenerator from "@/pages/OgImageGenerator";
 
 export const AnimatedRoutes = () => {
   const location = useLocation();
@@ -27,6 +28,7 @@ export const AnimatedRoutes = () => {
         <Route path="/mentions-legales" element={<PageTransition><MentionsLegales /></PageTransition>} />
         <Route path="/confidentialite" element={<PageTransition><Confidentialite /></PageTransition>} />
         <Route path="/cgv" element={<PageTransition><CGV /></PageTransition>} />
+        <Route path="/og-generator" element={<OgImageGenerator />} />
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>
     </AnimatePresence>
