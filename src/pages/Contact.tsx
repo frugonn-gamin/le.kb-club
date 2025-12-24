@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
@@ -44,6 +45,12 @@ const Contact = () => {
     }));
   };
   return <main className="min-h-screen bg-background">
+      <SEO 
+        title="Contact — Le.kB | Cabinet de kinésithérapie Château-Thierry"
+        description="Contactez Le.kB au 03 75 05 00 12. 5 rue des Bains, 02400 Château-Thierry. Cabinet de kinésithérapie et bien-être dans l'Aisne."
+        keywords="contact, téléphone, adresse, Château-Thierry, kinésithérapie, rendez-vous, Le.kB"
+        url="https://lekb.club/contact"
+      />
       <Navigation variant="solid" />
       
       {/* Hero Section */}

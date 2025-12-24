@@ -1,11 +1,18 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
 
 const Club = () => {
   return (
     <main className="min-h-screen bg-background">
+      <SEO 
+        title="Club — Adhésion Le.kB | Rejoignez notre communauté bien-être"
+        description="Rejoignez Le.kB, communauté de personnes partageant les mêmes valeurs : l'exigence, la bienveillance et le temps long. Adhésion individuelle ou familiale."
+        keywords="club santé, adhésion, communauté bien-être, Château-Thierry, membres, avantages exclusifs"
+        url="https://lekb.club/club"
+      />
       <Navigation variant="solid" />
       
       {/* Hero Section */}

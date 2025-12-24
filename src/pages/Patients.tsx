@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
 import { OptimizedImage } from "@/components/OptimizedImage";
@@ -8,6 +9,12 @@ import therapistImage from "@/assets/therapist-consultation.png";
 const Patients = () => {
   return (
     <main className="min-h-screen bg-background">
+      <SEO 
+        title="Patients — Accompagnement en kinésithérapie | Le.kB Château-Thierry"
+        description="Accompagnement personnalisé en kinésithérapie et soins naturels à Château-Thierry. Rééducation fonctionnelle, sport, respiratoire. Prise en charge globale."
+        keywords="patients, kinésithérapie, soins naturels, rééducation, Château-Thierry, accompagnement personnalisé, Aisne"
+        url="https://lekb.club/patients"
+      />
       <Navigation variant="solid" />
       
       {/* Hero Section */}

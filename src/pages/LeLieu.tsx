@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { motion } from "framer-motion";
 import { fadeInUp, scaleIn, staggerContainer, defaultTransition, defaultViewport } from "@/lib/animations";
 import { OptimizedImage } from "@/components/OptimizedImage";
@@ -10,6 +11,12 @@ import lieuConsultationImage from "@/assets/lieu-consultation.jpeg";
 const LeLieu = () => {
   return (
     <main className="min-h-screen bg-background">
+      <SEO 
+        title="Le Lieu — Espace de soins à Château-Thierry | Le.kB"
+        description="Découvrez notre espace de soins à Château-Thierry. Un lieu pensé pour le temps long, le calme et la prévention. Cabinet de kinésithérapie et bien-être dans l'Aisne."
+        keywords="espace soins, Château-Thierry, cabinet kinésithérapie, bien-être Aisne, lieu calme, prévention santé"
+        url="https://lekb.club/le-lieu"
+      />
       <Navigation variant="solid" />
       
       {/* Hero Section */}
