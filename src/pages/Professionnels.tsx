@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import { Building2, Users, Calendar, Lightbulb, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -10,6 +11,12 @@ import professionnelsHero from "@/assets/professionnels-hero.png";
 const Professionnels = () => {
   return (
     <main className="min-h-screen bg-background">
+      <SEO 
+        title="Professionnels — Espace coworking santé | Le.kB Château-Thierry"
+        description="Rejoignez Le.kB, espace de coworking santé à Château-Thierry. Cabinets équipés pour praticiens bien-être : kinés, ostéos, naturopathes, psychologues."
+        keywords="professionnels santé, coworking, cabinets équipés, kinésithérapeutes, ostéopathes, naturopathes, Château-Thierry, Aisne"
+        url="https://lekb.club/professionnels"
+      />
       <Navigation variant="solid" />
       
       {/* Hero Section */}
