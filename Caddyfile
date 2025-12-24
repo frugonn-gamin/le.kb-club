@@ -1,0 +1,11 @@
+lekb.club {
+  redir https://www.lekb.club{uri} 308
+}
+
+www.lekb.club {
+  @wp path /wp-admin* /wp-login.php /wordpress* /xmlrpc.php
+  respond @wp 444
+
+  reverse_proxy web:80
+  header -Server
+}
