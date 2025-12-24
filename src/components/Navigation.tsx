@@ -52,8 +52,12 @@ export const Navigation = ({ variant = "transparent" }: NavigationProps) => {
             <li className="mx-16">
               <Link
                 to="/"
-                className="font-serif text-xl lg:text-2xl font-normal tracking-[-0.01em] transition-opacity hover:opacity-70"
+                className="relative font-serif text-xl lg:text-2xl font-normal tracking-[-0.01em] transition-opacity hover:opacity-70 px-4 py-2"
               >
+                {/* Top-left corner */}
+                <span className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-foreground border-dashed" />
+                {/* Bottom-right corner */}
+                <span className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-foreground border-dashed" />
                 Le<span className="text-muted-foreground/50">.</span>kB
               </Link>
             </li>
@@ -77,8 +81,12 @@ export const Navigation = ({ variant = "transparent" }: NavigationProps) => {
           <div className="lg:hidden flex items-center justify-between w-full">
             <Link
               to="/"
-              className="font-serif text-xl font-normal tracking-[-0.01em] transition-opacity hover:opacity-70"
+              className="relative font-serif text-xl font-normal tracking-[-0.01em] transition-opacity hover:opacity-70 px-3 py-1.5"
             >
+              {/* Top-left corner */}
+              <span className="absolute top-0 left-0 w-2.5 h-2.5 border-t-2 border-l-2 border-foreground border-dashed" />
+              {/* Bottom-right corner */}
+              <span className="absolute bottom-0 right-0 w-2.5 h-2.5 border-b-2 border-r-2 border-foreground border-dashed" />
               Le<span className="text-muted-foreground/50">.</span>kB
             </Link>
 
